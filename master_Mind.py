@@ -6,6 +6,7 @@
 # Last mod by DevJan : added loop for replay
 print("MasterMind")
 
+import bcrypt
 import random
 
 def generate_Code(length=4, digits=6):
@@ -37,6 +38,9 @@ def play_Mastermind():
     attempts = 10
 
     for attempt in range(1, attempts + 1):
+        adminPassword = "pass"
+        if input("vul je wachtwoord in") == adminPassword:
+            print(secret_Code)
         guess = ""
         valid_Guess = False
         while not valid_Guess:
